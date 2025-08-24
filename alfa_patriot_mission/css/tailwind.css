@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary Colors */
+  --color-primary: #009739; /* Brazilian flag green */
+  --color-primary-50: #e6f7ed; /* light green-50 */
+  --color-primary-100: #ccefdb; /* light green-100 */
+  --color-primary-500: #009739; /* Brazilian flag green */
+  --color-primary-700: #006b29; /* dark green-700 */
+  --color-primary-900: #004d1d; /* dark green-900 */
+  
+  /* Secondary Colors */
+  --color-secondary: #012169; /* Brazilian flag blue */
+  --color-secondary-50: #e6e7f0; /* blue-50 */
+  --color-secondary-100: #cccedf; /* blue-100 */
+  --color-secondary-500: #012169; /* Brazilian flag blue */
+  --color-secondary-700: #01184a; /* dark blue-700 */
+  --color-secondary-900: #01102b; /* dark blue-900 */
+  
+  /* Accent Colors */
+  --color-accent: #FF0000; /* tactical red */
+  --color-accent-50: #ffe6e6; /* red-50 */
+  --color-accent-100: #ffcccc; /* red-100 */
+  --color-accent-500: #FF0000; /* tactical red */
+  --color-accent-700: #cc0000; /* dark red-700 */
+  --color-accent-900: #990000; /* dark red-900 */
+  
+  /* Background Colors */
+  --color-background: #000000; /* pure black */
+  --color-surface: #1a1a1a; /* dark gray */
+  --color-surface-light: #2a2a2a; /* lighter gray */
+  
+  /* Text Colors */
+  --color-text-primary: #00FF41; /* neon green */
+  --color-text-secondary: #FEDD00; /* Brazilian flag yellow */
+  --color-text-muted: #888888; /* muted gray */
+  --color-text-white: #ffffff; /* white */
+  
+  /* Status Colors */
+  --color-success: #00FF41; /* neon green */
+  --color-warning: #FF0000; /* tactical red */
+  --color-error: #FF4444; /* softer red */
+  
+  /* Shadows */
+  --shadow-cta: 0 4px 12px rgba(0, 255, 65, 0.15);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(0, 255, 65, 0.3);
+}
+
+/* Custom Components */
+@layer components {
+  .btn-primary {
+    @apply bg-accent text-white font-rajdhani font-bold px-6 py-3 rounded-lg border-2 border-accent transition-all duration-250 ease-in-out;
+    box-shadow: var(--shadow-cta);
+  }
+  
+  .btn-primary:hover {
+    @apply bg-accent-700 border-accent-700 transform scale-105;
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .card-testimonial {
+    @apply bg-surface border border-text-primary rounded-lg p-6;
+    box-shadow: var(--shadow-card);
+  }
+  
+  .text-terminal {
+    @apply text-text-primary font-mono;
+  }
+  
+  .text-highlight {
+    @apply text-text-secondary font-semibold;
+  }
+  
+  .quiz-container {
+    @apply bg-surface border border-text-primary rounded-lg p-4 transition-all duration-250 ease-in-out;
+  }
+  
+  .quiz-container:hover {
+    @apply border-text-secondary;
+    box-shadow: 0 0 15px rgba(254, 221, 0, 0.2);
+  }
+  
+  .glitch-effect {
+    animation: glitch 300ms ease-in-out;
+  }
+}
+
+/* Custom Animations */
+@keyframes glitch {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-2px); }
+  40% { transform: translateX(2px); }
+  60% { transform: translateX(-1px); }
+  80% { transform: translateX(1px); }
+  100% { transform: translateX(0); }
+}
+
+/* Form Styles */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+select, 
+textarea {
+  @apply bg-surface border border-text-primary text-text-primary font-mono px-4 py-2 rounded focus:outline-none focus:border-text-secondary transition-colors duration-250;
+}
+
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="tel"]:focus, 
+select:focus, 
+textarea:focus {
+  box-shadow: 0 0 10px rgba(254, 221, 0, 0.3);
+}
+
+/* Progress Bar */
+.progress-bar {
+  @apply bg-surface-light rounded-full h-2 overflow-hidden;
+}
+
+.progress-fill {
+  @apply bg-text-primary h-full transition-all duration-500 ease-out;
+  box-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+/* Countdown Timer */
+.countdown-digit {
+  @apply bg-accent text-white font-orbitron font-black text-2xl px-3 py-2 rounded border border-accent-700;
+  box-shadow: var(--shadow-cta);
+}
+
+/* Achievement Badge */
+.achievement-badge {
+  @apply bg-success text-background font-rajdhani font-bold px-3 py-1 rounded-full text-sm;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
