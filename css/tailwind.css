@@ -1,0 +1,12 @@
+@@ .. @@
+  .btn-primary {
+-    @apply bg-accent text-white font-rajdhani font-bold px-6 py-3 rounded-lg border-2 border-accent transition-all duration-250 ease-in-out;
++    @apply bg-primary text-white font-rajdhani font-bold px-6 py-3 rounded-lg border-2 border-primary transition-all duration-250 ease-in-out;
+    box-shadow: var(--shadow-cta);
+  }
+  
+  .btn-primary:hover {
+-    @apply bg-accent-700 border-accent-700 transform scale-105;
++    @apply bg-primary-700 border-primary-700 transform scale-105;
+    box-shadow: var(--shadow-glow);
+  }
